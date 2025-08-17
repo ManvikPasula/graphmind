@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(244, 6%, 97%);
+  --foreground: hsl(218, 34%, 19%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(218, 34%, 19%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(218, 34%, 19%);
+  --primary: hsl(213, 100%, 40%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(151, 47%, 56%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(210, 3%, 90%);
+  --muted-foreground: hsl(218, 34%, 19%);
+  --accent: hsl(244, 6%, 97%);
+  --accent-foreground: hsl(213, 100%, 40%);
+  --destructive: hsl(9, 95%, 56%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(244, 6%, 97%);
+  --ring: hsl(213, 100%, 40%);
+  --nodes: hsl(9, 100%, 58%);
+  --edges: hsl(216, 15%, 57%);
+  --radius: 0.75rem;
+  --font-inter: 'Inter', sans-serif;
+  --font-source: 'Source Sans Pro', sans-serif;
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(213, 100%, 40%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(151, 47%, 56%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(217, 32%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --ring: hsl(212, 72%, 59%);
+  --nodes: hsl(9, 100%, 58%);
+  --edges: hsl(216, 15%, 57%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-[var(--font-inter)] antialiased;
+  }
+}
+
+@layer components {
+  .graph-container {
+    background: radial-gradient(circle at 20% 20%, hsla(213, 100%, 40%, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, hsla(151, 47%, 56%, 0.05) 0%, transparent 50%);
+  }
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+  border: none;
+}
